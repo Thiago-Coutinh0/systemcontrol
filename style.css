@@ -342,3 +342,18 @@ button {
 #btn-finalizar:hover {
   background-color: #1e7e34;
 }
+
+/*Butão de finalizar vendas */
+
+.finalizar {
+  padding: 10px 18px;
+  background-color: #1B2A47;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.finalizar:hover {
+  background-color: #091327;
+}

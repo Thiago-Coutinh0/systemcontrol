@@ -142,6 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
         nome: produto.nome,
         qtd,
         preco: produto.preco,
+        custo: produto.custo,
         subtotal: produto.preco * qtd
       })
 
@@ -173,22 +174,33 @@ document.addEventListener("DOMContentLoaded", () => {
     totalSpan.textContent = `R$ ${total.toFixed(2)}`
   }
 
+  // ======================
+  // FINALIZAR VENDA + LUCRO
+  // ======================
   window.finalizarVenda = () => {
     if (carrinho.length === 0) return
 
     let produtos = JSON.parse(localStorage.getItem("produtos")) || []
     let caixa = Number(localStorage.getItem("caixa")) || 0
     let totalVenda = 0
+    let lucroVenda = 0
 
     carrinho.forEach(item => {
       produtos[item.index].quantidade -= item.qtd
       totalVenda += item.subtotal
+      lucroVenda += (item.preco - item.custo) * item.qtd
     })
 
     caixa += totalVenda
 
+    // === LUCRO MENSAL ===
+    const mesAtual = new Date().toISOString().slice(0, 7)
+    let lucros = JSON.parse(localStorage.getItem("lucros")) || {}
+    lucros[mesAtual] = (lucros[mesAtual] || 0) + lucroVenda
+
     localStorage.setItem("produtos", JSON.stringify(produtos))
     localStorage.setItem("caixa", caixa)
+    localStorage.setItem("lucros", JSON.stringify(lucros))
 
     carrinho = []
     atualizarCarrinho()
@@ -202,8 +214,18 @@ document.addEventListener("DOMContentLoaded", () => {
   function atualizarDashboard() {
     const caixa = Number(localStorage.getItem("caixa")) || 0
     const caixaEl = document.getElementById("caixa")
+
+    const mesAtual = new Date().toISOString().slice(0, 7)
+    const lucros = JSON.parse(localStorage.getItem("lucros")) || {}
+    const lucroMes = lucros[mesAtual] || 0
+
     if (caixaEl) {
       caixaEl.textContent = `R$ ${caixa.toFixed(2)}`
+    }
+
+    const lucroEl = document.getElementById("Lucro")
+    if (lucroEl) {
+      lucroEl.textContent = `R$ ${lucroMes.toFixed(2)}`
     }
   }
 
