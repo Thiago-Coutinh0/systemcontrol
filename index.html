@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Inicial</title>
+
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Ifinitty Tech</h2>
+    <a href="index.html">Dashboard</a>
+    <a href="cadastrar.html">Cadastrar produto</a>
+    <a href="Estoque.html">Estoque</a>
+  </div>
+
+  <div class="dashboard">
+    <div class="card">
+      <h3>Caixa</h3>
+      <p id="caixa">R$0,00</p>
+    </div>
+
+    <div class="card">
+      <h3>Lucro</h3>
+      <p id="Lucro">R$0,00</p>
+    </div>
+  </div>
+
+  <!-- ÁREA DE VENDAS -->
+<section class="vendas">
+
+  <h2>Registrar Venda</h2>
+
+  <div class="venda-form">
+
+    <div class="campo">
+      <label for="produto-select">Produto</label>
+      <select id="produto-select">
+        <option value="">Selecione um produto</option>
+        <!-- Produtos entram aqui via JS -->
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="quantidade-venda">Quantidade</label>
+      <input type="number" id="quantidade-venda" min="1" value="1">
+    </div>
+
+    <div class="campo">
+      <button id="btn-adicionar">Adicionar à venda</button>
+    </div>
+
+  </div>
+
+  <table class="tabela-venda">
+    <thead>
+      <tr>
+        <th>Produto</th>
+        <th>Quantidade</th>
+        <th>Preço (R$)</th>
+        <th>Subtotal (R$)</th>
+      </tr>
+    </thead>
+    <tbody id="carrinho">
+      <!-- Itens da venda -->
+    </tbody>
+  </table>
+
+  <div class="resumo-venda">
+    <h3>Total da venda: <span id="total-venda">R$ 0,00</span></h3>
+    <button class="finalizar" onclick="finalizarVenda()">Finalizar Venda</button>
+
+  </div>
+
+</section>
+
+<script src="script.js"></script>  
+</body>
+</html>

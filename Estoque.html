@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estoque</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Ifinitty Tech</h2>
+    <a href="index.html">Dashboard</a>
+    <a href="cadastrar.html">Cadastrar produto</a>
+    <a href="estoque.html">Estoque</a>
+  </div>
+
+  <main class="conteudo">
+    <h1>Estoque Geral - Ifinitty Tech</h1>
+    <input 
+        type="text" 
+        id="pesquisa" 
+        placeholder="Pesquisar produto..."
+        style="margin-bottom:15px; padding:8px; width: 970px; border-radius: 10px ;"
+        >
+
+    <table>
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Quantidade</th>
+          <th>Custo (R$)</th>
+          <th>Preço (R$)</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-estoque">
+        <!-- Produtos entram aqui -->
+      </tbody>
+    </table>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

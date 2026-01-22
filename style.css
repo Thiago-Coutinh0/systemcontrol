@@ -1,0 +1,263 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 220px;
+    height: 100%;
+    background-color: #1B2A47;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+.sidebar h2 { 
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    color: #00A1FF; 
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 5px 0;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #00A1FF;
+    color: #1B2A47;
+    border-radius: 4px;
+}
+
+.card {
+    background-color: #fff;
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.dashboard {
+    margin-left: 240px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+/* Formulário de cadastro */
+form#form-cadastro {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-width: 400px;
+}
+
+form#form-cadastro label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+form#form-cadastro input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+form#form-cadastro button {
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  background-color: #00A1FF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+form#form-cadastro button:hover {
+  background-color: #007ACC;
+}
+
+
+
+.cadastrando {
+    margin-left: 240px;
+    padding: 100px;
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* centraliza horizontalmente */
+}
+
+/*estoque */
+.conteudo {
+  margin-left: 240px;
+  padding: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.conteudo h1 {
+  margin-bottom: 20px;
+  color: #1B2A47;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: #1B2A47;
+  color: #fff;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+  background-color: #f2f6ff;
+}
+
+button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-entrada {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-saida {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/*parte de vendas*/
+/* ===== ÁREA DE VENDAS ===== */
+.vendas {
+  margin-left: 240px; /* respeita a sidebar */
+  margin-top: 30px;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.vendas h2 {
+  margin-bottom: 20px;
+  color: #1B2A47;
+}
+
+/* FORMULÁRIO DE VENDA */
+.venda-form {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.campo select,
+.campo input {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  min-width: 200px;
+}
+
+#btn-adicionar {
+  padding: 10px 18px;
+  background-color: #00A1FF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#btn-adicionar:hover {
+  background-color: #0085d1;
+}
+
+/* TABELA DO CARRINHO */
+.tabela-venda {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.tabela-venda thead {
+  background-color: #1B2A47;
+  color: #fff;
+}
+
+.tabela-venda th,
+.tabela-venda td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabela-venda tbody tr:hover {
+  background-color: #f2f6ff;
+}
+
+/* RESUMO */
+.resumo-venda {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resumo-venda h3 {
+  color: #1B2A47;
+}
+
+#btn-finalizar {
+  padding: 12px 25px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#btn-finalizar:hover {
+  background-color: #1e7e34;
+}
